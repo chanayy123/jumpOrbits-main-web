@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "启动游戏(Chrome)",
+            "url": "http://localhost:8080/platforms/web/index.html",
+            "webRoot": "${workspaceFolder}",
+            "preLaunchTask": "启动服务器",
+            "sourceMapPathOverrides": {
+                "*": "${webRoot}/*"
+            },
+            "sourceMaps": true,
+            "userDataDir": "${workspaceFolder}/.vscode/chrome-debug-profile",
+            "runtimeArgs": [
+                "--disable-web-security",
+                "--auto-open-devtools-for-tabs"
+            ]
+        }
+    ]
+}

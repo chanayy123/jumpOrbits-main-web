@@ -1,0 +1,163 @@
+/* 主题设置界面样式 */
+
+/* 主题设置按钮 */
+#theme-settings-button {
+    position: absolute;
+    top: 20px;
+    right: 120px;
+    z-index: 1100;
+    background-color: var(--ui-primary);
+    color: white;
+    border: 1px solid var(--ui-border);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 0 5px var(--ui-glow);
+}
+
+#theme-settings-button:hover {
+    background-color: var(--ui-button-hover);
+    transform: scale(1.05);
+}
+
+/* 主题设置面板 */
+.theme-settings-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--ui-panel-bg);
+    border-radius: 8px;
+    box-shadow: 0 0 20px var(--ui-glow);
+    padding: 20px;
+    min-width: 400px;
+    max-width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 1000;
+    color: var(--ui-text);
+    border: 1px solid var(--ui-border);
+}
+
+.theme-settings-panel h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: var(--ui-primary);
+    border-bottom: 1px solid var(--ui-border);
+    padding-bottom: 10px;
+}
+
+/* 主题选项容器 */
+.theme-options-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* 主题选项 */
+.theme-option {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid transparent;
+}
+
+.theme-option:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.theme-option.selected {
+    border-color: var(--ui-primary);
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 10px var(--ui-glow);
+}
+
+/* 主题名称 */
+.theme-name {
+    margin-top: 8px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* 主题预览 */
+.theme-preview {
+    width: 100%;
+    height: 80px;
+    background-color: rgba(20, 20, 30, 0.6);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+}
+
+/* 颜色样本 */
+.color-sample {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.special-sample {
+    width: 24px;
+    height: 24px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* 按钮容器 */
+.theme-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* 主题按钮样式 */
+.ui-button {
+    background-color: var(--ui-button-bg);
+    color: var(--ui-text);
+    border: 1px solid var(--ui-border);
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ui-button:hover {
+    background-color: var(--ui-button-hover);
+    box-shadow: 0 0 8px var(--ui-glow);
+}
+
+.theme-apply-button {
+    background-color: var(--ui-primary);
+    border-color: var(--ui-primary);
+}
+
+.theme-apply-button:hover {
+    background-color: var(--ui-button-hover);
+}
+
+.theme-cancel-button {
+    background-color: rgba(150, 70, 70, 0.6);
+    border-color: rgba(150, 70, 70, 0.8);
+}
+
+.theme-cancel-button:hover {
+    background-color: rgba(180, 80, 80, 0.8);
+}

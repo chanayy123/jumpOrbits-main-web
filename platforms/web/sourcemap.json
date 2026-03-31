@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "file": "main.js",
+    "sources": [
+        "main.js",
+        "core/*.js",
+        "ui/*.js",
+        "utils/*.js"
+    ],
+    "names": [],
+    "mappings": "",
+    "sourceRoot": "/"
+}

@@ -1,0 +1,242 @@
+/* 指尖跳跳 - UI组件样式 
+ * 霓虹风格UI组件库
+ */
+
+:root {
+    /* 基础颜色变量 - 会根据主题动态更新 */
+    --ui-primary: #3454df;
+    --ui-accent: #ff3a5e;
+    --ui-background: rgba(10, 12, 25, 0.85);
+    --ui-panel-bg: rgba(20, 20, 35, 0.95);
+    --ui-menu-overlay: rgba(0, 0, 0, 0.4);
+    --ui-text: #ffffff;
+    --ui-border: rgba(255, 255, 255, 0.2);
+    --ui-glow: rgba(52, 84, 223, 0.6);
+    --ui-glow-intense: rgba(52, 84, 223, 0.8);
+    --ui-button-bg: rgba(30, 30, 50, 0.7);
+    --ui-button-hover: #4b6aa3;
+
+    /* 组件尺寸 */
+    --button-padding: 12px 24px;
+    --button-border-radius: 4px;
+    --panel-padding: 20px;
+    --panel-border-radius: 8px;
+}
+
+/* ===== 按钮样式 ===== */
+
+.neo-button {
+    background-color: var(--ui-button-bg);
+    color: var(--ui-text);
+    border: 1px solid var(--ui-primary);
+    border-radius: var(--button-border-radius);
+    padding: var(--button-padding);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 0 8px var(--ui-glow);
+    text-shadow: 0 0 5px var(--ui-glow);
+}
+
+.neo-button:hover {
+    background-color: var(--ui-button-hover);
+    box-shadow: 0 0 12px var(--ui-glow-intense);
+    transform: translateY(-2px);
+}
+
+.neo-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 0 15px var(--ui-glow-intense);
+}
+
+/* 按钮尺寸变体 */
+.neo-button.small {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.neo-button.large {
+    padding: 14px 30px;
+    font-size: 18px;
+}
+
+/* 主按钮 */
+.neo-button.primary {
+    background-color: rgba(52, 84, 223, 0.3);
+    border: 1px solid var(--ui-primary);
+}
+
+/* 次要按钮 */
+.neo-button.secondary {
+    background-color: rgba(20, 20, 35, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 强调按钮 */
+.neo-button.accent {
+    background-color: rgba(255, 58, 94, 0.3);
+    border: 1px solid var(--ui-accent);
+    box-shadow: 0 0 8px rgba(255, 58, 94, 0.6);
+}
+
+/* 图标按钮 */
+.neo-button.icon {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 禁用状态 */
+.neo-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* ===== 面板样式 ===== */
+
+.neo-panel {
+    background-color: var(--ui-panel-bg);
+    border: 1px solid var(--ui-border);
+    border-radius: var(--panel-border-radius);
+    padding: var(--panel-padding);
+    box-shadow: 0 0 15px var(--ui-glow);
+    backdrop-filter: blur(8px);
+    color: var(--ui-text);
+}
+
+.neo-panel-header {
+    margin: -20px -20px 15px -20px;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--ui-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.neo-panel-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 0 0 5px var(--ui-glow);
+}
+
+.neo-panel-content {
+    margin-bottom: 20px;
+}
+
+.neo-panel-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px -20px -20px -20px;
+    padding: 15px 20px;
+    border-top: 1px solid var(--ui-border);
+}
+
+/* ===== 控制元素 ===== */
+
+.neo-switch {
+    position: relative;
+    display: inline-block;
+    width: 54px;
+    height: 28px;
+    margin: 10px 0;
+}
+
+.neo-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.neo-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: 0.4s;
+    border-radius: 28px;
+    border: 1px solid var(--ui-border);
+}
+
+.neo-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked+.neo-slider {
+    background-color: var(--ui-glow);
+    box-shadow: 0 0 8px var(--ui-glow);
+}
+
+input:checked+.neo-slider:before {
+    transform: translateX(26px);
+}
+
+/* ===== 输入框样式 ===== */
+
+.neo-input {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--ui-border);
+    border-radius: 4px;
+    padding: 10px 15px;
+    color: var(--ui-text);
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.neo-input:focus {
+    outline: none;
+    border-color: var(--ui-primary);
+    box-shadow: 0 0 5px var(--ui-glow);
+}
+
+/* ===== 标签样式 ===== */
+
+.neo-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--ui-text);
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* ===== 响应式调整 ===== */
+
+@media (max-width: 768px) {
+    :root {
+        --button-padding: 10px 16px;
+        --panel-padding: 15px;
+    }
+
+    .neo-button {
+        font-size: 14px;
+    }
+
+    .neo-button.large {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    .neo-panel-title {
+        font-size: 18px;
+    }
+}

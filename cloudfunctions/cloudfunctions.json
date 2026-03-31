@@ -1,0 +1,7 @@
+{
+  "envId": "jumporbits-prod",
+  "functions": [
+    "submitScore",
+    "fetchLeaderboard"
+  ]
+}

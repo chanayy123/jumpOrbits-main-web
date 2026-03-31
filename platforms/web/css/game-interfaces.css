@@ -1,0 +1,359 @@
+/* 指尖跳跳 - 游戏界面样式
+ * 包含游戏的各种界面：主界面、游戏中UI、暂停界面、结束界面
+ */
+
+/* ===== 通用游戏界面容器 ===== */
+
+.game-interface {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+/* ===== 主界面样式 ===== */
+
+.main-menu {
+    background-color: var(--ui-menu-overlay);
+    backdrop-filter: blur(8px);
+}
+
+.game-logo {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.game-title {
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--ui-text);
+    text-shadow: 0 0 20px var(--ui-glow), 0 0 30px var(--ui-glow);
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.game-subtitle {
+    font-size: 18px;
+    color: var(--ui-text);
+    opacity: 0.8;
+    margin-top: 10px;
+    text-shadow: 0 0 5px var(--ui-glow);
+}
+
+.main-menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 200px;
+}
+
+.main-menu .neo-button {
+    width: 100%;
+}
+
+.health-notice {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--ui-text);
+    opacity: 0.6;
+    max-width: 80%;
+    line-height: 1.4;
+    margin-top: 30px;
+    white-space: pre-line;
+}
+
+/* ===== 游戏中界面样式 ===== */
+
+.hud {
+    pointer-events: none;
+    /* 允许点击穿透到游戏画布 */
+}
+
+.hud>* {
+    pointer-events: auto;
+    /* 恢复UI元素的交互能力 */
+}
+
+.score-container {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    min-width: 150px;
+}
+
+.current-score {
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--ui-text);
+    text-shadow: 0 0 10px var(--ui-glow);
+    margin: 0;
+}
+
+.score-label {
+    font-size: 14px;
+    color: var(--ui-text);
+    opacity: 0.7;
+    margin: 0;
+}
+
+.high-score {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 16px;
+    color: var(--ui-text);
+    opacity: 0.7;
+}
+
+.control-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.layer-indicator {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 14px;
+    color: var(--ui-text);
+    opacity: 0.8;
+    background-color: var(--ui-panel-bg);
+    border: 1px solid var(--ui-border);
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+/* ===== 暂停界面样式 ===== */
+
+.pause-menu {
+    background-color: var(--ui-menu-overlay);
+    backdrop-filter: blur(8px);
+}
+
+.pause-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--ui-text);
+    text-shadow: 0 0 10px var(--ui-glow);
+    margin-bottom: 30px;
+}
+
+.pause-stats {
+    background-color: var(--ui-panel-bg);
+    border: 1px solid var(--ui-border);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 30px;
+    width: 250px;
+    text-align: center;
+}
+
+.pause-stats-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.pause-stats-label {
+    color: var(--ui-text);
+    opacity: 0.8;
+}
+
+.pause-stats-value {
+    color: var(--ui-text);
+    font-weight: bold;
+}
+
+.pause-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+}
+
+/* ===== 游戏结束界面样式 ===== */
+
+.game-over {
+    background-color: var(--ui-menu-overlay);
+    backdrop-filter: blur(10px);
+    color: var(--ui-text);
+}
+
+.game-over-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.game-over-title {
+    font-size: 42px;
+    font-weight: bold;
+    color: var(--ui-text);
+    text-shadow: 0 0 15px var(--ui-glow);
+    margin: 0 0 10px 0;
+}
+
+.final-score-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.final-score-label {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.final-score {
+    font-size: 60px;
+    font-weight: bold;
+    color: var(--ui-text);
+    text-shadow: 0 0 20px var(--ui-glow);
+}
+
+.new-high-score {
+    font-size: 16px;
+    color: var(--ui-accent);
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: var(--ui-glow);
+    border: 1px solid var(--ui-border);
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 10px;
+    text-shadow: 0 0 5px var(--ui-glow);
+}
+
+.game-stats {
+    background-color: var(--ui-panel-bg);
+    border: 1px solid var(--ui-border);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px auto;
+    width: 280px;
+}
+
+.game-stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.game-stat-item:last-child {
+    border-bottom: none;
+}
+
+.game-stat-label {
+    opacity: 0.8;
+}
+
+.game-stat-value {
+    font-weight: bold;
+}
+
+.game-over-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 220px;
+    margin-top: 20px;
+}
+
+/* ===== 动画效果 ===== */
+
+@keyframes scoreGlow {
+    0% {
+        text-shadow: 0 0 5px var(--ui-glow);
+    }
+
+    50% {
+        text-shadow: 0 0 15px var(--ui-glow), 0 0 30px var(--ui-glow);
+    }
+
+    100% {
+        text-shadow: 0 0 5px var(--ui-glow);
+    }
+}
+
+.score-changed {
+    animation: scoreGlow 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* ===== 响应式调整 ===== */
+
+@media (max-width: 768px) {
+    .game-title {
+        font-size: 36px;
+    }
+
+    .final-score {
+        font-size: 48px;
+    }
+
+    .game-stats,
+    .pause-stats,
+    .game-over-buttons,
+    .pause-buttons,
+    .main-menu-buttons {
+        width: 80%;
+        max-width: 280px;
+    }
+
+    .control-buttons {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-height: 600px) {
+    .game-logo {
+        margin-bottom: 20px;
+    }
+
+    .game-stats,
+    .pause-stats {
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    .game-over-title,
+    .pause-title {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .final-score {
+        font-size: 36px;
+    }
+}

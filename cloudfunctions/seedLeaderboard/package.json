@@ -1,0 +1,11 @@
+{
+    "name": "seedLeaderboard",
+    "version": "1.0.0",
+    "description": "Initialize leaderboard with mock data",
+    "main": "index.js",
+    "author": "Antigravity",
+    "license": "MIT",
+    "dependencies": {
+        "wx-server-sdk": "latest"
+    }
+}

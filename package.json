@@ -1,0 +1,19 @@
+{
+    "name": "jump-orbits",
+    "version": "1.0.0",
+    "description": "指尖跳跳 - 节奏休闲小游戏",
+    "type": "module",
+    "scripts": {
+        "start": "python -m SimpleHTTPServer 8080",
+        "dev": "npx live-server platforms/web --port=8080 --open=/",
+        "dev:web": "npx live-server platforms/web --port=8080 --open=/",
+        "debug": "npx live-server platforms/web --port=8080 --open=/ --verbose",
+        "debug:custom": "node tools/start-debug-server.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "jimp": "^1.6.0",
+        "live-server": "^1.2.2"
+    }
+}

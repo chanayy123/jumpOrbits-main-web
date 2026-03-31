@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "启动服务器",
+            "type": "npm",
+            "script": "debug:custom",
+            "isBackground": true,
+            "problemMatcher": [
+                {
+                    "pattern": {
+                        "regexp": "."
+                    },
+                    "background": {
+                        "activeOnStart": true,
+                        "beginsPattern": "Debug server started",
+                        "endsPattern": "Server ready: http://localhost:[0-9]+"
+                    }
+                }
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "focus": false,
+                "clear": true
+            }
+        }
+    ]
+}
