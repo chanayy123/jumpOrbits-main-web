@@ -8,7 +8,10 @@
         "dev": "npx live-server platforms/web --port=8080 --open=/",
         "dev:web": "npx live-server platforms/web --port=8080 --open=/",
         "debug": "npx live-server platforms/web --port=8080 --open=/ --verbose",
-        "debug:custom": "node tools/start-debug-server.js"
+        "debug:custom": "node tools/start-debug-server.js",
+        "audio:check": "node tools/audio-v2/check.mjs",
+        "audio:render": "node tools/audio-v2/render-samples.mjs samples",
+        "audio:smoke": "node tools/audio-v2/smoke-webaudio.mjs"
     },
     "author": "",
     "license": "ISC",

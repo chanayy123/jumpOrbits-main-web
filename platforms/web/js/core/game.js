@@ -19,6 +19,7 @@ import { SunriseEffectSystem } from './sunrise-effects/sunrise-effect-system.js'
 import { GameInterface } from './ui/game-interface.js';
 import { getCurrentPlatformConfig } from '../config/PlatformConfig.js';
 import logger from './utils/logger.js';
+import { isAudioV2Enabled } from './audio-v2/flag.js';
 
 export class WebGame {
     constructor(canvas) {
@@ -92,6 +93,13 @@ export class WebGame {
 
         // 初始化设置UI等组件
         this.initializeComponents();
+
+        // 音效系统 v2（研究原型）：仅 ?audio=v2 时动态加载，默认行为不变
+        if (isAudioV2Enabled()) {
+            import('./audio-v2/integrate.js')
+                .then((m) => m.installAudioV2(this))
+                .catch((err) => logger.error('[audio-v2] 加载失败，继续使用原音频系统:', err));
+        }
 
         // 在创建UI后异步初始化音频管理器
         // 延迟初始化可以避免在页面加载阶段出现音频管理器报错

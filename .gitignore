@@ -44,3 +44,5 @@ coverage/
 project.private.config.json
 project.config.json
 !project.config.json.example
+# 音效 v2 试听样本（npm run audio:render 生成）
+samples/

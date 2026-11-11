@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>指尖跳跳 · 音效系统 v2 试听台</title>
+    <style>
+        :root { color-scheme: dark; }
+        body { margin: 0; font: 14px/1.5 -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #0b1020; color: #e8ecf8; }
+        main { max-width: 760px; margin: 0 auto; padding: 16px; }
+        h1 { font-size: 18px; margin: 4px 0 2px; }
+        .hint { color: #9aa6c8; font-size: 12px; margin-bottom: 12px; }
+        section { background: #141b33; border-radius: 12px; padding: 12px; margin: 10px 0; }
+        h2 { font-size: 13px; color: #9aa6c8; margin: 0 0 8px; font-weight: 600; }
+        .row { display: flex; flex-wrap: wrap; gap: 8px; }
+        button { background: #22305c; color: #e8ecf8; border: 0; border-radius: 8px; padding: 9px 12px; font-size: 14px; cursor: pointer; }
+        button.on { background: #4f6bff; }
+        button.big { padding: 18px 26px; font-size: 16px; background: #2c8a6a; }
+        #meter { height: 10px; background: #0b1020; border-radius: 5px; overflow: hidden; margin-top: 8px; }
+        #meter > div { height: 100%; width: 0; background: linear-gradient(90deg, #2c8a6a, #e2c044 80%, #e5484d); transition: width 60ms; }
+        pre { white-space: pre-wrap; font-size: 12px; color: #b8c2e0; margin: 0; }
+        .layers span { display: inline-block; padding: 2px 8px; margin: 2px; border-radius: 6px; background: #22305c; color: #6b77a0; }
+        .layers span.on { background: #2c8a6a; color: #fff; }
+    </style>
+</head>
+<body>
+<main>
+    <h1>音效系统 v2 试听台（研究原型）</h1>
+    <div class="hint">点任意按钮解锁音频。所有声音为运行时合成，无音频文件。游戏内体验：index.html?audio=v2（可加 &amp;daypart=night）。</div>
+
+    <section><h2>主题</h2><div class="row" id="themes"></div></section>
+    <section><h2>昼夜（不选则跟随本机时钟）</h2><div class="row" id="dayparts"></div></section>
+    <section>
+        <h2>单个音效</h2>
+        <div class="row">
+            <button class="big" id="jumpBtn">跳跃（连击 +1）</button>
+            <button data-sfx="land">落地</button><button data-sfx="clear">清除</button>
+            <button data-sfx="special">特殊轨道</button><button data-sfx="fail">失败</button><button data-sfx="ui">UI</button>
+        </div>
+    </section>
+    <section>
+        <h2>模拟一局（自动跳，连击逐渐升高，音乐逐层加入）</h2>
+        <div class="row">
+            <button id="music">音乐 开/关</button><button id="bot">自动跳 开/关</button>
+            <button id="spam">压力测试：1 秒 40 次跳跃</button><button id="reset">连击清零</button>
+        </div>
+        <div class="layers" id="layers"></div>
+        <div id="meter"><div></div></div>
+    </section>
+    <section><h2>状态</h2><pre id="stats">未解锁</pre></section>
+</main>
+<script type="module" src="./js/audio-lab.js"></script>
+</body>
+</html>
